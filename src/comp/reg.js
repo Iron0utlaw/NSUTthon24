@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { ReactComponent as Thon } from '../assets/Thon.svg'
+import axios from 'axios';
 import './reg.css'
 import Myacc from './acc/Myacc';
 
@@ -17,6 +18,9 @@ const Reg = () => {
             email: '',
             rollno: '',
             branch: '',
+            teamName: '',
+            teamSize: 3,
+            leader: true,
         },
         {
             id: 1,
@@ -24,6 +28,7 @@ const Reg = () => {
             email: '',
             rollno: '',
             branch: '',
+            leader: false,
         },
         {
             id: 2,
@@ -31,6 +36,7 @@ const Reg = () => {
             email: '',
             rollno: '',
             branch: '',
+            leader: false,
         },
         {
             id: 3,
@@ -38,6 +44,7 @@ const Reg = () => {
             email: '',
             rollno: '',
             branch: '',
+            leader: false,
         },
         {
             id: 4,
@@ -45,14 +52,30 @@ const Reg = () => {
             email: '',
             rollno: '',
             branch: '',
+            leader: false,
         },
     ])
 
     const onSubmit = (e) =>{
         e.preventDefault()
-        console.log(data);
+        console.log(team);
+        axios.post('https://sheet.best/api/sheets/c6360c63-1264-4f4b-b39c-a7d2e204e8e6', data)
+        .then(response => {
+            console.log(response);
+        })
     }
     let i = 0;
+    const tName = (e, id) => {
+        var result = data;
+        console.log(id)
+        result = result.map((x) => {
+          if (x.id === id) {
+            x.teamName = e.target.value;
+            return x;
+          } else return x;
+        });
+        setData(result);
+      };
 
   return (
     <div className='reg-container'>
@@ -65,6 +88,7 @@ const Reg = () => {
             <button onClick={() => setTeam(3)}>3</button>
             <button onClick={() => setTeam(4)}>4</button>
             <button onClick={() => setTeam(5)}>5</button>
+            <input required type='text' placeholder='Team Name' value={data[0].teamName} onChange={e => tName(e,0)}></input>
             {
                 members.map((curr) => {
                     return <Myacc name={curr.props.children[1]} data={data} setData={setData} id={i++}/>
