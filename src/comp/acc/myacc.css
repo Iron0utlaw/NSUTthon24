@@ -1,0 +1,18 @@
+.acc-container, .acc-toggle{
+    background-color: aliceblue;
+    color: black;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.acc-container input{
+    width: 500px;
+    margin-bottom: 10px;
+}
+
+.acc-container button{
+    width: min-content;
+}
