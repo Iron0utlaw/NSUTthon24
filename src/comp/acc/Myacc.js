@@ -5,7 +5,7 @@ const Myacc = ({name}) => {
   return (
     <div>
         <button onClick={() => setToggle(!toggle)}>➕</button>
-        <input type='text' placeholder="Name"></input>
+        <input type='text' placeholder={`Harsh ${name}`}></input>
         {toggle &&
             <div>
                 <input type='text' placeholder="Email"></input>

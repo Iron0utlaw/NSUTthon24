@@ -53,7 +53,7 @@ const Reg = () => {
             <button onClick={() => setTeam(5)}>5</button>
             {
                 members.map((curr) => {
-                    return <Myacc name={curr}/>
+                    return <Myacc name={curr.props.children[1]}/>
                 })
             }
         </div>
