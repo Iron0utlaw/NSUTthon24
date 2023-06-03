@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
+import './myacc.css'
 
-const Myacc = ({name}) => {
+const Myacc = ({name, data, updateData, count}) => {
     const [toggle, setToggle] = useState(false)
   return (
-    <div>
+    <div className='acc-container'>
         <button onClick={() => setToggle(!toggle)}>➕</button>
-        <input type='text' placeholder={`Harsh ${name}`}></input>
+        <input required type='text' placeholder={`Team Member ${name}`}></input>
         {toggle &&
-            <div>
-                <input type='text' placeholder="Email"></input>
-                <input type='text' placeholder="Branch"></input>
-                <input type='text' placeholder="Roll No"></input>
+            <div className='acc-toggle'>
+                <input required type='text' placeholder="Email" value={data.email} onChange={e => updateData({email: e.target.value})}></input>
+                <input required type='text' placeholder="Branch"></input>
+                <input required type='text' placeholder="Roll No"></input>
             </div>
         }
 
