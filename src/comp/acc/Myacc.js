@@ -1,5 +1,4 @@
-import { useFormikContext } from 'formik'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 const Myacc = ({name}) => {
     const [toggle, setToggle] = useState(false)
