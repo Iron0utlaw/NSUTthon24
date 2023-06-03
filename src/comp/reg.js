@@ -10,84 +10,55 @@ const Reg = () => {
     for (let i = 0; i < team; i++) {
         members.push(<div>Team Member {i+1}</div>)
     }
-
-    // const formik = useFormik({
-    //     initialValues: {
-    //         name1: '',
-    //         email1: '',
-    //         branch1: '',
-    //         rollno1: '',
-
-    //         name2: '',
-    //         email2: '',
-    //         branch2: '',
-    //         rollno2: '',
-
-    //         name3: '',
-    //         email3: '',
-    //         branch3: '',
-    //         rollno3: '',
-
-    //         name4: '',
-    //         email4: '',
-    //         branch4: '',
-    //         rollno4: '',
-
-    //         name5: '',
-    //         email5: '',
-    //         branch5: '',
-    //         rollno5: '',
-    //     }
-    // })
-
-    // const [data,setData] = useState({
-    //     name1: '',
-    //     email1: '',
-    //     branch1: '',
-    //     rollno1: '',
-
-    //     name2: '',
-    //     email2: '',
-    //     branch2: '',
-    //     rollno2: '',
-
-    //     name3: '',
-    //     email3: '',
-    //     branch3: '',
-    //     rollno3: '',
-
-    //     name4: '',
-    //     email4: '',
-    //     branch4: '',
-    //     rollno4: '',
-        
-    //     name5: '',
-    //     email5: '',
-    //     branch5: '',
-    //     rollno5: '',
-    // })
-    const [data,setData] = useState({
-        name: [],
-        branch: [],
-        rollno: [],
-        email: [],
-    })
+    const [data,setData] = useState([
+        {
+            id: 0,
+            name: '',
+            email: '',
+            rollno: '',
+            branch: '',
+        },
+        {
+            id: 1,
+            name: '',
+            email: '',
+            rollno: '',
+            branch: '',
+        },
+        {
+            id: 2,
+            name: '',
+            email: '',
+            rollno: '',
+            branch: '',
+        },
+        {
+            id: 3,
+            name: '',
+            email: '',
+            rollno: '',
+            branch: '',
+        },
+        {
+            id: 4,
+            name: '',
+            email: '',
+            rollno: '',
+            branch: '',
+        },
+    ])
 
     const onSubmit = (e) =>{
         e.preventDefault()
+        console.log(data);
     }
-
-    const updateData = (fields) => {
-        setData(prev =>{
-            return {...prev, ...fields}
-        })
-    }
-    let i = 1;
+    let i = 0;
 
   return (
     <div className='reg-container'>
         <div className='side'>
             <Thon className='thon'/>
+            
         </div>
         <form className='form' onSubmit={onSubmit}>
             <h1>Team Size = {team}</h1>
@@ -96,7 +67,7 @@ const Reg = () => {
             <button onClick={() => setTeam(5)}>5</button>
             {
                 members.map((curr) => {
-                    return <Myacc name={curr.props.children[1]} data={data} updateData={updateData} count={i++}/>
+                    return <Myacc name={curr.props.children[1]} data={data} setData={setData} id={i++}/>
                 })
             }
             <button type='submit'>Submit</button>
