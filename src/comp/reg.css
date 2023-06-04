@@ -22,3 +22,12 @@
     translate: -45%;
     scale: 1.8;
 }
+
+.team-size{
+    background-color: var(--main);
+    width: fit-content;
+    padding: 5px;
+    color: var(--sec);
+    font-size: 40px;
+    cursor: pointer;
+}
