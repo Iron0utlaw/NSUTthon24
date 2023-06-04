@@ -103,9 +103,11 @@ const Reg = () => {
         </div>
         <form className='form' onSubmit={onSubmit}>
             <h1>Team Size = {team}</h1>
-            <p className='team-size' onClick={() => setTeam(3)}>3</p>
-            <p className='team-size' onClick={() => setTeam(4)}>4</p>
-            <p className='team-size' onClick={() => setTeam(5)}>5</p>
+            <div className='size-btn'>
+                <p className='team-size' onClick={() => setTeam(3)}>3</p>
+                <p className='team-size' onClick={() => setTeam(4)}>4</p>
+                <p className='team-size' onClick={() => setTeam(5)}>5</p>
+            </div>
             <input required type='text' placeholder='Team Name' value={data[0].teamName} onChange={e => tName(e,0)}></input>
             {
                 members.map((curr) => {
