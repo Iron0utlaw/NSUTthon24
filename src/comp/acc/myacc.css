@@ -22,5 +22,5 @@ input[name="rollno"],input[name="name"],input[name="branch"]{
 }
 
 .drop{
-    width: fit-content;
+    width: 300px;
 }

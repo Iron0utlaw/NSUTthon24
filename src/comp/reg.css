@@ -8,6 +8,7 @@
     background-color: var(--sec);
     height: 100vh;
     width: 70vw;
+
 }
 
 .side{
@@ -26,8 +27,14 @@
 .team-size{
     background-color: var(--main);
     width: fit-content;
-    padding: 5px;
+    padding: 5px 10px ;
     color: var(--sec);
     font-size: 40px;
     cursor: pointer;
+    border-radius: 10px;
+}
+
+.size-btn{
+    display: flex;
+    justify-content: space-around;
 }
