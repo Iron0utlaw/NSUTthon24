@@ -1,0 +1,7 @@
+.team-card{
+    background-color: var(--main);
+    color: var(--sec);
+    width: 300px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
