@@ -7,7 +7,7 @@ const Myacc = ({name, data, setData, id}) => {
     const LeaderToggle = (id) =>{
       var result = data;
       result = result.map((x) => {
-        if(x.id == id){
+        if(x.id === id){
           x.leader = true;
           return x;
         }else{
@@ -100,7 +100,7 @@ const Myacc = ({name, data, setData, id}) => {
 
   return (
     <div className='acc-container'>
-        <button onClick={() => setToggle(!toggle)}>➕</button>
+        <button type='button' onClick={() => setToggle(!toggle)}>➕</button>
         <input required name="name" type='text' placeholder={`Team Member ${name}`} value={data[id].name} onChange={e => {nameHandler(e,id); setToggle(true)}} onFocusCapture={()=> setToggle(true)}></input>
         <p className={'lead-btn' + (data[id].leader ? ' active' : ' not-active')} onClick={() => LeaderToggle(id)}>Leader</p>
         {toggle &&
