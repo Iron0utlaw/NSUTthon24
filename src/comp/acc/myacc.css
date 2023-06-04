@@ -1,6 +1,6 @@
 .acc-container, .acc-toggle{
-    background-color: aliceblue;
-    color: black;
+    background-color: var(--main);
+    color: var(--sec);
     margin: 20px;
     padding: 10px;
     display: flex;

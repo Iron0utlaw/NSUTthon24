@@ -1,6 +1,6 @@
 .main-container{
-    background-color: aliceblue;
-    color: black;
+    background-color: var(--main);
+    color: var(--sec);
     width: 100vw;
     height: 80vh;
     position: absolute;
