@@ -24,3 +24,19 @@ input[name="rollno"],input[name="name"],input[name="branch"]{
 .drop{
     width: 300px;
 }
+
+.lead-btn{
+    width: fit-content;
+    padding: 5px 10px ;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.active{
+    background-color: var(--sec);
+    color: var(--main);
+}
+.not-active{
+    background-color: var(--main);
+    color: var(--sec);
+}

@@ -4,6 +4,19 @@ import Select from 'react-select';
 
 const Myacc = ({name, data, setData, id}) => {
     const [toggle, setToggle] = useState(false)
+    const LeaderToggle = (id) =>{
+      var result = data;
+      result = result.map((x) => {
+        if(x.id == id){
+          x.leader = true;
+          return x;
+        }else{
+          x.leader = false;
+          return x;
+        }
+      })
+      setData(result);
+    }
     const emailHandler = (e, id) => {
       var result = data;
       result = result.map((x) => {
@@ -34,16 +47,6 @@ const Myacc = ({name, data, setData, id}) => {
       });
       setData(result);
     };
-    // const branchHandler = (e, id) => {
-    //   var result = data;
-    //   result = result.map((x) => {
-    //     if (x.id === id) {
-    //       x.branch = e.target.value;
-    //       return x;
-    //     } else return x;
-    //   });
-    //   setData(result);
-    // };
     const newBranchHandler = (value,id) => {
       var result = data;
       result = result.map((x) => {
@@ -71,6 +74,8 @@ const Myacc = ({name, data, setData, id}) => {
           { label: "ICE", value: "ICE" },
           { label: "ME", value: "ME" },
           { label: "BT", value: "BT" },
+          { label: "B.Design", value: "B.Design" },
+          { label: "B.Ftech", value: "B.Ftech" },
         ]
       },
       {
@@ -88,7 +93,7 @@ const Myacc = ({name, data, setData, id}) => {
           { label: "MEEV", value: "MEEV" },
           { label: "CE", value: "CE" },
           { label: "GI", value: "GI" },
-          { label: "BArch", value: "BArch" },
+          { label: "B.Arch", value: "B.Arch" },
         ]
       },
     ];
@@ -97,10 +102,10 @@ const Myacc = ({name, data, setData, id}) => {
     <div className='acc-container'>
         <button onClick={() => setToggle(!toggle)}>➕</button>
         <input required name="name" type='text' placeholder={`Team Member ${name}`} value={data[id].name} onChange={e => {nameHandler(e,id); setToggle(true)}} onFocusCapture={()=> setToggle(true)}></input>
+        <p className={'lead-btn' + (data[id].leader ? ' active' : ' not-active')} onClick={() => LeaderToggle(id)}>Leader</p>
         {toggle &&
             <div className='acc-toggle'>
                 <input required type='text' name="email" placeholder="Email" value={data[id].email} onChange={e => emailHandler(e,id)}></input>
-                {/* <input required type='text' name="branch" placeholder="Branch" value={data[id].branch} onChange={e => branchHandler(e,id)}></input> */}
                 <Select className='drop' options={options} onChange={value => newBranchHandler(value,id)}/>
                 <input required type='text' name="rollno" placeholder="Roll No" value={data[id].rollno} onChange={e => rollnoHandler(e,id)}></input>
             </div>
