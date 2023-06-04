@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { ReactComponent as Thon } from '../assets/Thon.svg'
-import axios from 'axios';
 import './reg.css'
 import Myacc from './acc/Myacc';
 import Modal from './Modal';
+import AddData from './modules/AddData'
 
 
 const Reg = () => {
@@ -90,7 +90,8 @@ const Reg = () => {
     const onSubmit = (e) =>{
         e.preventDefault()
         clear()
-        console.log(data);
+        console.log(JSON.parse(JSON.stringify(data)));
+        AddData(data);
         // axios.post('https://sheet.best/api/sheets/c6360c63-1264-4f4b-b39c-a7d2e204e8e6', data)
         // .then(response => {
         //     console.log(response);

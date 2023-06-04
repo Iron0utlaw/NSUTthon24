@@ -7,7 +7,11 @@ const Home = () => {
   return (
     <div className='main-container'>
         <Thon/>
+        <div>
         <Link to="/r">Next</Link>
+        <p></p>
+        <Link to="/s">Teams</Link>
+        </div>
     </div>
   )
 }
