@@ -16,4 +16,6 @@
     height: 50vh;
     width: 50vw;
     color: var(--sec);
+    display: flex;
+    justify-content: space-between;
 }
