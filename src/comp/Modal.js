@@ -13,7 +13,7 @@ const Modal = ({closeModal, data ,team}) => {
                     return <Preview key={person.id} person={person}/>
                 })
             }
-            <button onClick={closeModal}>Close</button>
+            <button form='my-form' type='submit' onClick={closeModal}>Close</button>
         </div>
     </>,document.querySelector(".ThonModal")
   )
