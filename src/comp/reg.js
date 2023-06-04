@@ -68,7 +68,7 @@ const Reg = () => {
                     branch: '',
                     leader: false,
                 }
-            return x;
+                return x;
           } else return x;
         });
         setData(result);

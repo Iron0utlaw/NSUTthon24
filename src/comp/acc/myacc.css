@@ -16,3 +16,11 @@
 .acc-container button{
     width: min-content;
 }
+
+input[name="rollno"],input[name="name"],input[name="branch"]{
+    text-transform: uppercase;
+}
+
+.drop{
+    width: fit-content;
+}
