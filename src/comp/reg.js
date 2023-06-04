@@ -3,6 +3,7 @@ import { ReactComponent as Thon } from '../assets/Thon.svg'
 import axios from 'axios';
 import './reg.css'
 import Myacc from './acc/Myacc';
+import Modal from './Modal';
 
 
 const Reg = () => {
@@ -58,6 +59,7 @@ const Reg = () => {
 
     const clear = () => {
         var result = data;
+        console.log(`Clearing ${team}`)
         result = result.map((x) => {
             if (x.id >= team) {
                 data[x.id] = {
@@ -74,14 +76,23 @@ const Reg = () => {
         setData(result);
     };
 
+    const [showModal, setShowModal] = useState(false);
+    const openModal = () => {
+        clear();
+        setShowModal(true);
+    }
+    const closeModal = () => {
+        setShowModal(false);
+    }
+
     const onSubmit = (e) =>{
         e.preventDefault()
         clear()
         console.log(data);
-        axios.post('https://sheet.best/api/sheets/c6360c63-1264-4f4b-b39c-a7d2e204e8e6', data)
-        .then(response => {
-            console.log(response);
-        })
+        // axios.post('https://sheet.best/api/sheets/c6360c63-1264-4f4b-b39c-a7d2e204e8e6', data)
+        // .then(response => {
+        //     console.log(response);
+        // })
     }
     let i = 0;
     const tName = (e, id) => {
@@ -102,7 +113,7 @@ const Reg = () => {
             
         </div>
         <form className='form' onSubmit={onSubmit}>
-            <h1>Team Size = {team}</h1>
+            <h1>Team Size</h1>
             <div className='size-btn'>
                 <p className='team-size' onClick={() => setTeam(3)}>3</p>
                 <p className='team-size' onClick={() => setTeam(4)}>4</p>
@@ -111,10 +122,11 @@ const Reg = () => {
             <input required type='text' placeholder='Team Name' value={data[0].teamName} onChange={e => tName(e,0)}></input>
             {
                 members.map((curr) => {
-                    return <Myacc name={curr.props.children[1]} data={data} setData={setData} id={i++}/>
+                    return <Myacc key={i+1} name={curr.props.children[1]} data={data} setData={setData} id={i++}/>
                 })
             }
-            <button type='submit'>Submit</button>
+            <button type='submit' onClick={openModal}>Submit</button>
+            {showModal && <Modal closeModal={closeModal} data={data} team={team}/>}
         </form>
     </div>
   )
