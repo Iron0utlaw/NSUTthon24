@@ -59,7 +59,6 @@ const Reg = () => {
 
     const clear = () => {
         var result = data;
-        console.log(`Clearing ${team}`)
         result = result.map((x) => {
             if (x.id >= team) {
                 data[x.id] = {
@@ -75,13 +74,16 @@ const Reg = () => {
         });
         setData(result);
     };
-
+    const delay = ms => new Promise(
+        resolve => setTimeout(resolve, ms)
+      );
     const [showModal, setShowModal] = useState(false);
     const openModal = () => {
         clear();
         setShowModal(true);
     }
-    const closeModal = () => {
+    const closeModal = async () => {
+        await delay(1000);
         setShowModal(false);
     }
 
@@ -112,7 +114,7 @@ const Reg = () => {
             <Thon className='thon'/>
             
         </div>
-        <form className='form' onSubmit={onSubmit}>
+        <form id='my-form' className='form' onSubmit={onSubmit}>
             <h1>Team Size</h1>
             <div className='size-btn'>
                 <p className='team-size' onClick={() => setTeam(3)}>3</p>
@@ -125,7 +127,7 @@ const Reg = () => {
                     return <Myacc key={i+1} name={curr.props.children[1]} data={data} setData={setData} id={i++}/>
                 })
             }
-            <button type='submit' onClick={openModal}>Submit</button>
+            <p onClick={openModal}>Submit</p>
             {showModal && <Modal closeModal={closeModal} data={data} team={team}/>}
         </form>
     </div>

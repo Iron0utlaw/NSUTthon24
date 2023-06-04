@@ -2,7 +2,6 @@ import React from 'react'
 import './pre.css'
 
 const Preview = ({person}) => {
-    console.log(person.leader)
   return (
     <div className='card'>
         <h2>Name = {person.name}</h2>
