@@ -113,7 +113,6 @@ const Reg = () => {
     <div className='reg-container'>
         <div className='side'>
             <Thon className='thon'/>
-            
         </div>
         <form id='my-form' className='form' onSubmit={onSubmit}>
             <h1>Team Size</h1>
