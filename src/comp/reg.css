@@ -2,13 +2,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: max-content;
 }
 
 .form{
     background-color: var(--sec);
     height: 100vh;
     width: 70vw;
-
+    overflow:scroll;
 }
 
 .side{
@@ -17,6 +18,8 @@
     width: 30vw;
     display: flex;
     align-items: center;
+    position: sticky;
+    bottom: 0;
 }
 
 .thon{
