@@ -19,6 +19,7 @@ const Teams = () => {
     <div>
         <h1>Teams</h1>
         <input type='text' placeholder='Search Team' onChange={(e) => setSearch(e.target.value)}></input>
+        <h2>{allTeams.length}</h2>
         {
             allTeams.filter((entry) => {
                 return search.toLowerCase === ''
