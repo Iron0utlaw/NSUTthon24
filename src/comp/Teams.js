@@ -16,7 +16,7 @@ const Teams = () => {
     },[])
   return (
     <div>
-        Teams
+        <h1>Teams</h1>
         {
             allTeams.map((entry) => {
                 return <Team key={entry.id} entry={entry}/>

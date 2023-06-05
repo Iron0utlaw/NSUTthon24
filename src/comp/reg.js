@@ -128,7 +128,7 @@ const Reg = () => {
                     return <Myacc key={i+1} name={curr.props.children[1]} data={data} setData={setData} id={i++}/>
                 })
             }
-            <p onClick={openModal}>Submit</p>
+            <button type='button' onClick={openModal}>Submit</button>
             {showModal && <Modal closeModal={closeModal} data={data} team={team}/>}
         </form>
     </div>
