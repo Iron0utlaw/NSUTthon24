@@ -1,7 +1,7 @@
 .acc-container, .acc-toggle{
     background-color: var(--main);
     color: var(--sec);
-    margin: 20px;
+    margin-bottom: 20px;
     padding: 10px;
     display: flex;
     flex-direction: column;

@@ -1,8 +1,7 @@
 .reg-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: max-content;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 2fr;
 }
 
 .form{
@@ -10,6 +9,7 @@
     height: 100vh;
     width: 70vw;
     overflow:scroll;
+    text-align: left;
 }
 
 .side{
@@ -39,5 +39,5 @@
 
 .size-btn{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
