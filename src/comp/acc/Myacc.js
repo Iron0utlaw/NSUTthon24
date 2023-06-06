@@ -118,7 +118,7 @@ const Myacc = ({name, data, setData, id}) => {
         {toggle &&
             <div className='acc-toggle'>
                 <input required type='text' name="email" placeholder="Email" value={data[id].email} onChange={e => emailHandler(e,id)}></input>
-                <Select required className='drop' options={options} onChange={value => newBranchHandler(value,id)}/>
+                <Select required className='drop' placeholder="Branch" options={options} onChange={value => newBranchHandler(value,id)}/>
                 <input required type='text' name="rollno" placeholder="Roll No" value={data[id].rollno} onChange={e => rollnoHandler(e,id)}></input>
             </div>
         }
