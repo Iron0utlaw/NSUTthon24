@@ -18,9 +18,12 @@
 }
 
 .acc-container input{
-    width: 70%;
+    width: 68%;
     /* margin-bottom: 10px; */
     background-color: var(--main);
+    font-family: 'Mont';
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .toggler{
@@ -71,6 +74,7 @@ input[name="rollno"],input[name="name"],input[name="branch"]{
     font-size: 20px;
     cursor: pointer;
     border-radius: 8px;
+    font-family: 'Akira';
 }
 
 .active{
@@ -79,5 +83,10 @@ input[name="rollno"],input[name="name"],input[name="branch"]{
 }
 .not-active{
     background-color: var(--main);
-    color: var(--sec);
+    color: var(--main);
+    border: 1px solid;
+    border-color: var(--sec);
+    -webkit-text-stroke-width: 1px;   
+    -webkit-text-stroke-color: var(--sec);   
+
 }

@@ -25,3 +25,13 @@ code {
   src: local('Raleway'), url(./fonts/Raleway.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Mont';
+  src: local('Mont'), url(./fonts/Mont.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Akira';
+  src: local('Akira'), url(./fonts/Akira.otf) format('opentype');
+}
+

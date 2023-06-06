@@ -36,15 +36,15 @@
     color: var(--sec);
     font-size: 24px;
     cursor: pointer;
-    font-weight: 800;
     border-radius: 100%;
     text-align:center;
-    font-family: monospace;
+    font-family: 'Akira';
 }
 
 .size-btn{
     display: flex;
     justify-content: space-between;
+    height: min-content;
 }
 
 .size{
@@ -56,7 +56,7 @@
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 800;
-    font-size: 51.0639px;
+    font-size: 40px;
     text-transform: uppercase;
 }
 
@@ -92,7 +92,9 @@ input:focus{
 
 .submit-form{
     width: 100%;
-    font-family: 'Raleway';
+    font-family: 'Mont';
+    font-weight: 700;
+    text-transform: uppercase;
     font-size: 20px;
     padding: 15px;
     border-radius: 6px;
