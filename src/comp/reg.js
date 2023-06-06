@@ -4,6 +4,8 @@ import './reg.css'
 import Myacc from './acc/Myacc';
 import Modal from './Modal';
 import AddData from './modules/AddData'
+import { tName, clear } from './modules/RegMods';
+import { openModal,closeModal } from './modules/ModalMods';
 
 
 const Reg = () => {
@@ -56,58 +58,15 @@ const Reg = () => {
             leader: false,
         },
     ])
-
-    const clear = () => {
-        var result = data;
-        result = result.map((x) => {
-            if (x.id >= team) {
-                data[x.id] = {
-                    id: x.id,
-                    name: '',
-                    email: '',
-                    rollno: '',
-                    branch: '',
-                    leader: false,
-                }
-                return x;
-          } else return x;
-        });
-        setData(result);
-    };
-    const delay = ms => new Promise(
-        resolve => setTimeout(resolve, ms)
-      );
     const [showModal, setShowModal] = useState(false);
-    const openModal = () => {
-        clear();
-        setShowModal(true);
-    }
-    const closeModal = async () => {
-        await delay(1000);
-        setShowModal(false);
-    }
 
     const onSubmit = (e) =>{
         e.preventDefault()
-        clear()
+        clear(data,setData,team);
         console.log(JSON.parse(JSON.stringify(data)));
         AddData(data);
-        // axios.post('https://sheet.best/api/sheets/c6360c63-1264-4f4b-b39c-a7d2e204e8e6', data)
-        // .then(response => {
-        //     console.log(response);
-        // })
     }
     let i = 0;
-    const tName = (e, id) => {
-        var result = data;
-        result = result.map((x) => {
-          if (x.id === id) {
-            x.teamName = e.target.value;
-            return x;
-          } else return x;
-        });
-        setData(result);
-    };
 
   return (
     <div className='reg-container'>
@@ -124,15 +83,15 @@ const Reg = () => {
                 </div>
             </div>
             <div className='team-details'>
-                <input className='team-name' required type='text' placeholder='Team Name' value={data[0].teamName} onChange={e => tName(e,0)}></input>
+                <input className='team-name' required type='text' placeholder='Team Name' value={data[0].teamName} onChange={e => tName(e,0,data,setData)}></input>
                 {
                     members.map((curr) => {
                         return <Myacc key={i+1} name={curr.props.children[1]} data={data} setData={setData} id={i++}/>
                     })
                 }
-                <button className='submit-form' type='button' onClick={openModal}>Submit</button>
+                <button className='submit-form' type='button' onClick={() => openModal(data,setData,setShowModal,team)}>Submit</button>
             </div>
-            {showModal && <Modal closeModal={closeModal} data={data} team={team}/>}
+            {showModal && <Modal closeModal={() => closeModal(setShowModal)} data={data} team={team}/>}
         </form>
     </div>
   )
