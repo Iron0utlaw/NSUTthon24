@@ -1,9 +1,19 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './myacc.css'
 import Select from 'react-select';
 
 const Myacc = ({name, data, setData, id}) => {
     const [toggle, setToggle] = useState(false)
+    const ref = useRef(null);
+    const scroller = () => {
+      setToggle(!toggle)
+      ref.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: "center",
+        inline: "center",
+      });
+    };    
+
     const LeaderToggle = (id) =>{
       var result = data;
       result = result.map((x) => {
@@ -99,10 +109,12 @@ const Myacc = ({name, data, setData, id}) => {
     ];
 
   return (
-    <div className='acc-container'>
-        <button type='button' onClick={() => setToggle(!toggle)}>➕</button>
-        <input required name="name" type='text' placeholder={`Team Member ${name}`} value={data[id].name} onChange={e => {nameHandler(e,id); setToggle(true)}} onFocusCapture={()=> setToggle(true)}></input>
-        <p className={'lead-btn' + (data[id].leader ? ' active' : ' not-active')} onClick={() => LeaderToggle(id)}>Leader</p>
+    <div ref={ref} className='acc-container'>
+        <div className='top-fields'>
+          <button className={'toggler ' + (toggle ? 'toggle-active' : '')} type='button' onClick={scroller}>+</button>
+          <input required name="name" type='text' placeholder={`Team Member ${name}`} value={data[id].name} onChange={e => {nameHandler(e,id); setToggle(true)}} onFocusCapture={()=> setToggle(true)}></input>
+          <p className={'lead-btn' + (data[id].leader ? ' active' : ' not-active')} onClick={() => LeaderToggle(id)}>Leader</p>
+        </div>
         {toggle &&
             <div className='acc-toggle'>
                 <input required type='text' name="email" placeholder="Email" value={data[id].email} onChange={e => emailHandler(e,id)}></input>

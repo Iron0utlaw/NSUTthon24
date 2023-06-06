@@ -115,19 +115,23 @@ const Reg = () => {
             <Thon className='thon'/>
         </div>
         <form id='my-form' className='form' onSubmit={onSubmit}>
-            <h1>Team Size</h1>
-            <div className='size-btn'>
-                <p className='team-size' onClick={() => setTeam(3)}>3</p>
-                <p className='team-size' onClick={() => setTeam(4)}>4</p>
-                <p className='team-size' onClick={() => setTeam(5)}>5</p>
+            <div className='size'>
+                <h1>Team Size</h1>
+                <div className='size-btn'>
+                    <p className='team-size' onClick={() => setTeam(3)}>3</p>
+                    <p className='team-size' onClick={() => setTeam(4)}>4</p>
+                    <p className='team-size' onClick={() => setTeam(5)}>5</p>
+                </div>
             </div>
-            <input required type='text' placeholder='Team Name' value={data[0].teamName} onChange={e => tName(e,0)}></input>
-            {
-                members.map((curr) => {
-                    return <Myacc key={i+1} name={curr.props.children[1]} data={data} setData={setData} id={i++}/>
-                })
-            }
-            <button type='button' onClick={openModal}>Submit</button>
+            <div className='team-details'>
+                <input className='team-name' required type='text' placeholder='Team Name' value={data[0].teamName} onChange={e => tName(e,0)}></input>
+                {
+                    members.map((curr) => {
+                        return <Myacc key={i+1} name={curr.props.children[1]} data={data} setData={setData} id={i++}/>
+                    })
+                }
+                <button className='submit-form' type='button' onClick={openModal}>Submit</button>
+            </div>
             {showModal && <Modal closeModal={closeModal} data={data} team={team}/>}
         </form>
     </div>

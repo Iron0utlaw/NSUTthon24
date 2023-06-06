@@ -1,6 +1,7 @@
 :root{
   --main: #F3F2F2;
   --sec: #0f0f0f;
+  --accent: #2BE280;
 }
 
 body {
@@ -15,13 +16,12 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: 'Akira',source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
 @font-face {
   font-family: 'Akira';
   src: local('Akira'), url(./fonts/Akira.otf) format('opentype');
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
 }
+

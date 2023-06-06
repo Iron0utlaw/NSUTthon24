@@ -2,15 +2,46 @@
     background-color: var(--main);
     color: var(--sec);
     margin-bottom: 20px;
-    padding: 10px;
+    padding: 10px 20px 10px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
 .acc-container input{
-    width: 500px;
-    margin-bottom: 10px;
+    width: 70%;
+    /* margin-bottom: 10px; */
+    background-color: var(--main);
+}
+
+.toggler{
+    background-color: var(--sec);
+    border: none;
+    border-radius: 50%;
+    color: var(--main);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2em;
+    line-height: 20px;
+    padding: 15px;
+}
+
+.toggle-active{
+    transform: rotate(45deg);
+}
+
+.top-fields{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input{
+    border-style: none;
+    font-family: 'Akira';
+    font-size: 20px;
 }
 
 .acc-container button{
@@ -27,9 +58,10 @@ input[name="rollno"],input[name="name"],input[name="branch"]{
 
 .lead-btn{
     width: fit-content;
-    padding: 5px 10px ;
+    padding: 6px 35px ;
     font-size: 20px;
     cursor: pointer;
+    border-radius: 8px;
 }
 
 .active{
