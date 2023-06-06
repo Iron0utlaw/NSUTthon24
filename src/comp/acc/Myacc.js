@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react'
-import './myacc.css'
 import Select from 'react-select';
 import { LeaderToggle, emailHandler, nameHandler, rollnoHandler, branchHandler} from '../modules/AccMods';
 import { options } from '../modules/BranchData';
+import './myacc.css'
 
 const Myacc = ({name, data, setData, id}) => {
     const [toggle, setToggle] = useState(false)

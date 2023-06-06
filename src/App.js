@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './comp/home'
-import Reg from './comp/reg'
+import Reg from './comp/Register'
 import Teams from './comp/Teams';
 
 function App() {
