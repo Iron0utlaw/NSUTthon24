@@ -36,8 +36,10 @@
     color: var(--sec);
     font-size: 24px;
     cursor: pointer;
+    font-weight: 800;
     border-radius: 100%;
-    text-align: center;
+    text-align:center;
+    font-family: monospace;
 }
 
 .size-btn{
@@ -51,8 +53,11 @@
 
 .size h1{
     margin-bottom: 0;
-    margin-top: 2em;
-    font-size: 2rem;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 51.0639px;
+    text-transform: uppercase;
 }
 
 .team-details{
@@ -62,8 +67,10 @@
 .team-name{
     background-color: var(--sec);
     border-style: none;
-    font-family: Akira;
+    font-family: 'Raleway';
     font-size: 5em;
+    text-transform: uppercase;
+    font-weight: 800;
     margin-bottom: 0.5em;
     color: var(--main);
     width: 100%;
@@ -78,19 +85,14 @@ input::after {
     box-sizing: border-box;
 }
 
-.team-name:focus{
+input:focus{
     outline: none;
-    caret-color: transparent;
 }
 
-.team-name:focus::placeholder{
-    font-size: 5.2rem;
-    text-shadow: 4px 4px 30px rgba(214, 214, 214, 0.489);
-}
 
 .submit-form{
     width: 100%;
-    font-family: 'Akira';
+    font-family: 'Raleway';
     font-size: 20px;
     padding: 15px;
     border-radius: 6px;
