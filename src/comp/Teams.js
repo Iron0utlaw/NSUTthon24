@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Team from './Team'
 import supabase from '../supabase'
+import './teams.css'
 
 const Teams = () => {
     const [allTeams,setAllTeams] = useState([]);
@@ -26,10 +27,11 @@ const Teams = () => {
 
     if(err) return <h1>ERROR</h1>
   return (
-    <div>
+    <div >
         {loading ? <h1>Loading</h1> : <h1>Teams</h1>}
         <input type='text' placeholder='Search Team' onChange={(e) => setSearch(e.target.value)}></input>
         <h2>{allTeams.length}</h2>
+        <div className='all-teams'>
         {
             allTeams.filter((entry) => {
                 return search.toLowerCase === ''
@@ -39,6 +41,7 @@ const Teams = () => {
                 return <Team key={entry.id} entry={entry}/>
             })
         }
+        </div>
     </div>
   )
 }
