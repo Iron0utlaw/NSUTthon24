@@ -1,4 +1,24 @@
 .card{
     background-color: var(--main);
-    padding: 2rem;
+    font-size: 9px;
+    width: max-content;
+    height: max-content;
+    padding-bottom: 1rem;
+}
+
+.pre-info{
+    padding: 0 2rem;
+}
+
+.pre-name{
+    background-color: var(--sec);
+    color: var(--main);
+    padding: 2rem 2rem;
+    margin: 0;
+    line-height: 20px;
+    font-size: 1rem;
+}
+
+.pre-info h2{
+    margin-bottom: 1rem;
 }
