@@ -4,6 +4,7 @@ import supabase from '../supabase'
 import './teams.css'
 import {ReactComponent as Thon} from '../assets/thon-white.svg'
 import { BarLoader } from 'react-spinners'
+import { postData } from './modules/PostData'
 
 const Teams = () => {
     const [allTeams,setAllTeams] = useState([]);
@@ -52,6 +53,7 @@ const Teams = () => {
                     })
                 }
                 </div>
+                {/* <button type='button' onClick={() => postData(setLoading,allTeams)}>Post Data</button> */}
             </div>
         </div>}
     </div>
