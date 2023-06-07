@@ -107,10 +107,24 @@ input:focus{
         display: none;
     }
     .side{
-        width: 10%;
+        width: 90%;
     }
     .reg-container{
         gap: 1em;
-        grid-template-columns: 1fr 8fr;
+        grid-template-columns: 1fr 20fr;
+    }
+    .team-details{
+        margin-right: 1.5rem;
+    }
+    .team-name{
+        font-size: 3rem;
+    }
+    .size h1{
+        font-size: 30px;
+    }
+    .team-size{
+        width: 30px;
+        height: 30px;
+        padding: 8px;
     }
 }
