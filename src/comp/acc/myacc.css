@@ -23,6 +23,7 @@
 
 .name-input{
     width: 68%;
+    padding-left: 0.8em;
 }
 
 .acc-container input{
@@ -100,4 +101,29 @@ input[name="rollno"],input[name="name"],input[name="branch"]{
     -webkit-text-stroke-width: 1px;   
     -webkit-text-stroke-color: var(--sec);   
 
+}
+
+@media (max-width:480px){
+    .toggler{
+        font-size: 1.5em;
+        line-height: 15px;
+        padding: 12px;
+    }
+
+    .lead-btn{
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+
+    .name-input{
+        font-size: 1em;
+    }
+
+    .acc-toggle{
+        margin-left: 1.7rem;
+    }
+
+    .acc-toggle input{
+        font-size: 1em;
+    }
 }
