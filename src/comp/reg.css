@@ -101,3 +101,16 @@ input:focus{
     border-style: none;
     background-color: var(--accent);
 }
+
+@media (max-width:480px){
+    .thon{
+        display: none;
+    }
+    .side{
+        width: 10%;
+    }
+    .reg-container{
+        gap: 1em;
+        grid-template-columns: 1fr 8fr;
+    }
+}
