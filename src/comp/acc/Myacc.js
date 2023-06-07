@@ -20,7 +20,7 @@ const Myacc = ({name, data, setData, id}) => {
     <div ref={ref} className='acc-container'>
         <div className='top-fields'>
           <button className={'toggler ' + (toggle ? 'toggle-active' : '')} type='button' onClick={scroller}>+</button>
-          <input required name="name" type='text' placeholder={`Team Member ${name}`} value={data[id].name} onChange={e => {nameHandler(e,id,data,setData); setToggle(true)}} onFocusCapture={()=> setToggle(true)}></input>
+          <input className='name-input' required name="name" type='text' placeholder={`Team Member ${name}`} value={data[id].name} onChange={e => {nameHandler(e,id,data,setData); setToggle(true)}} onFocusCapture={()=> setToggle(true)}></input>
           <p className={'lead-btn' + (data[id].leader ? ' active' : ' not-active')} onClick={() => LeaderToggle(id,data,setData)}>Leader</p>
         </div>
         {toggle &&

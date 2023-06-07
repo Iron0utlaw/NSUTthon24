@@ -53,7 +53,7 @@ const Teams = () => {
                     })
                 }
                 </div>
-                {/* <button type='button' onClick={() => postData(setLoading,allTeams)}>Post Data</button> */}
+                <button type='button' onClick={() => postData(setLoading,allTeams)}>Post Data</button>
             </div>
         </div>}
     </div>

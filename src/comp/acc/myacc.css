@@ -17,8 +17,15 @@
     align-self: flex-start;
 }
 
-.acc-container input{
+.acc-toggle input{
+    width: fit-content;
+}
+
+.name-input{
     width: 68%;
+}
+
+.acc-container input{
     /* margin-bottom: 10px; */
     background-color: var(--main);
     font-family: 'Mont';
@@ -65,7 +72,11 @@ input[name="rollno"],input[name="name"],input[name="branch"]{
 }
 
 .drop{
-    width: 300px;
+    width: max-content;
+    font-family: 'Raleway';
+    font-weight: 800;
+    padding: 0;
+    text-transform: uppercase;
 }
 
 .lead-btn{

@@ -2,7 +2,7 @@ export function tName(e, id, data, setData){
     var result = data;
     result = result.map((x) => {
       if (x.id === id) {
-        x.teamName = e.target.value;
+        x.teamName = e.target.value.toUpperCase();
         return x;
       } else return x;
     });

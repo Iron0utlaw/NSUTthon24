@@ -16,7 +16,7 @@ export function emailHandler(e, id, data, setData){
     var result = data;
     result = result.map((x) => {
       if (x.id === id) {
-        x.email = e.target.value;
+        x.email = e.target.value.toLowerCase();
         return x;
       } else return x;
     });
@@ -27,7 +27,7 @@ export function nameHandler(e, id, data, setData){
     var result = data;
     result = result.map((x) => {
       if (x.id === id) {
-        x.name = e.target.value;
+        x.name = e.target.value.toUpperCase();
         return x;
       } else return x;
     });
@@ -38,7 +38,7 @@ export function rollnoHandler(e, id, data, setData){
     var result = data;
     result = result.map((x) => {
       if (x.id === id) {
-        x.rollno = e.target.value;
+        x.rollno = e.target.value.toUpperCase();
         return x;
       } else return x;
     });
@@ -48,7 +48,7 @@ export function branchHandler(value, id, data, setData){
     var result = data;
     result = result.map((x) => {
       if (x.id === id) {
-        x.branch = value.value;
+        x.branch = value.value.toUpperCase();
         return x;
       } else return x;
     });

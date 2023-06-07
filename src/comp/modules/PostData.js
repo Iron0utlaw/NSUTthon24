@@ -4,7 +4,8 @@ export async function postData(setLoading,allTeams){
     setLoading(true)
     console.log("hello")
     allTeams.map(async (team) => {
-        team.team.map(async (student) => {
+        const ts = team.team[0].teamSize;
+        team.team.slice(0,ts).map(async (student) => {
             await supabase
             .from('student-db')
             .insert([
