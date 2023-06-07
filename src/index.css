@@ -23,15 +23,18 @@ code {
 @font-face {
   font-family: 'Raleway';
   src: local('Raleway'), url(./fonts/Raleway.ttf) format('truetype');
+  font-display: block;
 }
 
 @font-face {
   font-family: 'Mont';
   src: local('Mont'), url(./fonts/Mont.ttf) format('truetype');
+  font-display: block;
 }
 
 @font-face {
   font-family: 'Akira';
   src: local('Akira'), url(./fonts/Akira.otf) format('opentype');
+  font-display: block;
 }
 
