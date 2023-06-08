@@ -82,7 +82,7 @@ const Reg = () => {
   return (
     <div className='reg-container'>
         <div className='side'>
-            <Link to="/"><Thon className='thon'/></Link>
+        <Thon className='thon'/>
         </div>
         <form id='my-form' className='form' onSubmit={onSubmit}>
             <div className='size'>
