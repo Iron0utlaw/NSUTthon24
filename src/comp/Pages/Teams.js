@@ -7,6 +7,7 @@ import { BarLoader } from 'react-spinners'
 import { postData } from '../modules/PostData'
 import {BiSearch} from 'react-icons/bi'
 import { Link } from 'react-router-dom'
+import { AnimatePresence,motion } from 'framer-motion'
 
 const Teams = () => {
     const [allTeams,setAllTeams] = useState([]);
@@ -32,6 +33,16 @@ const Teams = () => {
 
     allTeams.sort((a, b) => (a.id > b.id) ? 1 : -1)
     if(err) return <h1>ERROR</h1>
+
+    const variants = {
+        enter: {
+          transition: { staggerChildren: 1, delayChildren: 0 }
+        },
+        exit: {
+          transition: { staggerChildren: 0.05, staggerDirection: -1 }
+        }
+      };
+
   return (
     <div className='team-loader'>
         {loading ? <div className='bar'>
@@ -41,7 +52,7 @@ const Teams = () => {
         <div className='team-wrapper'>
             <div className='temp'>
             <Link to='/'><Thon className='logo'/></Link>
-            <h1 className='team-header'>Teams</h1>
+            <motion.h1 className='team-header'>Teams</motion.h1>
             </div>
             <div className='team-container'>
                 <div className='team-search'>
@@ -50,7 +61,13 @@ const Teams = () => {
                     <BiSearch/>
                 </button>
                 </div>
-                <div className='all-teams'>
+                <AnimatePresence>
+                <motion.div 
+                variants={variants}
+                initial="exit"
+                animate="enter"
+                exit="exit"
+                className='all-teams'>
                 {
                     allTeams.filter((entry) => {
                         return search.toLowerCase === ''
@@ -60,7 +77,8 @@ const Teams = () => {
                         return <Team key={entry.id} entry={entry}/>
                     })
                 }
-                </div>
+                </motion.div>
+                </AnimatePresence>
                 {/* <button type='button' onClick={() => postData(setLoading,allTeams)}>Post Data</button> */}
             </div>
         </div>}
