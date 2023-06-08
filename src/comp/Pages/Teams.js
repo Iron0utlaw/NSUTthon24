@@ -49,7 +49,7 @@ const Teams = () => {
         :
         <div className='team-wrapper'>
             <div className='temp'>
-            <Link to='/'><Thon className='logo'/></Link>
+            <Link name='Logo-redirect' to='/'><Thon className='logo'/></Link>
             <motion.h1
             initial={{y: `${height}`, clipPath: 'polygon(0 0, 100% 0, 99% 0, 0 0) ', }}
             animate={{y: 0, clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',}}
@@ -60,7 +60,7 @@ const Teams = () => {
             <div className='team-container'>
                 <div className='team-search'>
                 <input className='search-bar' type='text' placeholder='Search Team' onChange={(e) => setSearch(e.target.value.toLowerCase())}></input>
-                <button className='search-btn' type='button'>
+                <button name='search-btn' className='search-btn' type='button'>
                     <BiSearch/>
                 </button>
                 </div>
