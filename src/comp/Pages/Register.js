@@ -6,6 +6,7 @@ import Modal from '../Modal/Modal';
 import AddData from '../modules/AddData'
 import { tName, clear } from '../modules/RegMods';
 import { openModal,closeModal } from '../modules/ModalMods';
+import { Link } from 'react-router-dom';
 
 
 const Reg = () => {
@@ -71,7 +72,7 @@ const Reg = () => {
   return (
     <div className='reg-container'>
         <div className='side'>
-            <Thon className='thon'/>
+            <Link to="/"><Thon className='thon'/></Link>
         </div>
         <form id='my-form' className='form' onSubmit={onSubmit}>
             <div className='size'>
