@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { ReactComponent as Thon } from '../assets/Thon.svg'
+import { ReactComponent as Thon } from '../../assets/Thon.svg'
 import './reg.css'
-import Myacc from './acc/Myacc';
-import Modal from './Modal';
-import AddData from './modules/AddData'
-import { tName, clear } from './modules/RegMods';
-import { openModal,closeModal } from './modules/ModalMods';
+import Myacc from '../acc/Myacc';
+import Modal from '../Modal/Modal';
+import AddData from '../modules/AddData'
+import { tName, clear } from '../modules/RegMods';
+import { openModal,closeModal } from '../modules/ModalMods';
 
 
 const Reg = () => {

@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import Team from './Team'
-import supabase from '../supabase'
+import Team from '../Team/Team'
+import supabase from '../../supabase'
 import './teams.css'
-import {ReactComponent as Thon} from '../assets/thon-white.svg'
+import {ReactComponent as Thon} from '../../assets/thon-white.svg'
 import { BarLoader } from 'react-spinners'
-import { postData } from './modules/PostData'
+import { postData } from '../modules/PostData'
 
 const Teams = () => {
     const [allTeams,setAllTeams] = useState([]);
