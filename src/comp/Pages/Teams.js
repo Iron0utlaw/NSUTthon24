@@ -6,6 +6,7 @@ import {ReactComponent as Thon} from '../../assets/thon-white.svg'
 import { BarLoader } from 'react-spinners'
 import { postData } from '../modules/PostData'
 import {BiSearch} from 'react-icons/bi'
+import { Link } from 'react-router-dom'
 
 const Teams = () => {
     const [allTeams,setAllTeams] = useState([]);
@@ -39,7 +40,7 @@ const Teams = () => {
         :
         <div className='team-wrapper'>
             <div className='temp'>
-            <Thon className='logo'/>
+            <Link to='/'><Thon className='logo'/></Link>
             <h1 className='team-header'>Teams</h1>
             </div>
             <div className='team-container'>
