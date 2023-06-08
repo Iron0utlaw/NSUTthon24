@@ -10,4 +10,29 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding: 35px;
+}
+
+.link-container{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.link{
+    text-decoration: none;
+    color: var(--main);
+    background-color: var(--sec);
+    padding: 10px;
+    font-weight: 700;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+@media (max-width: 450px) {
+    .main-logo{
+        width: 80%;
+    }
 }

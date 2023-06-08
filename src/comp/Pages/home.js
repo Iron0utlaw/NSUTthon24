@@ -6,11 +6,10 @@ import { Link } from 'react-router-dom'
 const Home = () => {
   return (
     <div className='main-container'>
-        <Thon/>
-        <div>
-        <Link to="/registration">Register</Link>
-        <p></p>
-        <Link to="/teams">Teams</Link>
+        <Thon className='main-logo'/>
+        <div className='link-container'>
+          <Link className='link' to="/registration">Register</Link>
+          <Link className='link' to="/teams">Teams</Link>
         </div>
     </div>
   )
