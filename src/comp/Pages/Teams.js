@@ -43,7 +43,11 @@ const Teams = () => {
         <div className='team-wrapper'>
             <div className='temp'>
             <Link to='/'><Thon className='logo'/></Link>
-            <motion.h1 className='team-header'>Teams</motion.h1>
+            <motion.h1
+            initial={{y: 250, clipPath: 'polygon(0 0, 100% 0, 99% 0, 0 0) ', }}
+            animate={{y: 0, clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',}}
+            transition={{duration: 1.2}}
+            className='team-header'>Teams</motion.h1>
             </div>
             <div className='team-container'>
                 <div className='team-search'>
@@ -54,6 +58,9 @@ const Teams = () => {
                 </div>
                 <AnimatePresence>
                 <motion.div 
+                initial={{opacity: 0, y: 200}}
+                animate={{opacity: 1, y: 0}}
+                transition={{duration: 1.2}}
                 className='all-teams'>
                 {
                     allTeams.filter((entry) => {
