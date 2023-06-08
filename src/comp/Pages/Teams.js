@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import Team from '../Team/Team'
 import supabase from '../../supabase'
 import './teams.css'
@@ -32,7 +32,14 @@ const Teams = () => {
     },[])
 
     allTeams.sort((a, b) => (a.id > b.id) ? 1 : -1)
+    const [height, setHeight] = useState(0);
+    const elementRef = useRef(null);
+
+    useEffect(() => {
+        setHeight(elementRef.current.offsetHeight);
+    }, []);
     if(err) return <h1>ERROR</h1>
+
 
   return (
     <div className='team-loader'>
@@ -44,10 +51,11 @@ const Teams = () => {
             <div className='temp'>
             <Link to='/'><Thon className='logo'/></Link>
             <motion.h1
-            initial={{y: 250, clipPath: 'polygon(0 0, 100% 0, 99% 0, 0 0) ', }}
+            initial={{y: `${height}`, clipPath: 'polygon(0 0, 100% 0, 99% 0, 0 0) ', }}
             animate={{y: 0, clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',}}
-            transition={{duration: 1.2}}
-            className='team-header'>Teams</motion.h1>
+            transition={{duration: 1}}
+            className='team-header'
+            ref={elementRef}>Teams</motion.h1>
             </div>
             <div className='team-container'>
                 <div className='team-search'>
