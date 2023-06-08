@@ -34,15 +34,6 @@ const Teams = () => {
     allTeams.sort((a, b) => (a.id > b.id) ? 1 : -1)
     if(err) return <h1>ERROR</h1>
 
-    const variants = {
-        enter: {
-          transition: { staggerChildren: 1, delayChildren: 0 }
-        },
-        exit: {
-          transition: { staggerChildren: 0.05, staggerDirection: -1 }
-        }
-      };
-
   return (
     <div className='team-loader'>
         {loading ? <div className='bar'>
@@ -63,10 +54,6 @@ const Teams = () => {
                 </div>
                 <AnimatePresence>
                 <motion.div 
-                variants={variants}
-                initial="exit"
-                animate="enter"
-                exit="exit"
                 className='all-teams'>
                 {
                     allTeams.filter((entry) => {

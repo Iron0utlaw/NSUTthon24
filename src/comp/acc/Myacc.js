@@ -17,11 +17,21 @@ const Myacc = ({name, data, setData, id}) => {
       });
     };    
 
+    const variants = {
+      enter: {
+        opacity: 1,
+        x: 0,
+        transition: { staggerChildren: 0.5, delayChildren: 1 }
+      },
+      exit: {
+        opacity: 0,
+        x: 100,
+        transition: { staggerChildren: 0.05, staggerDirection: -1 }
+      }
+    };
   return (
-    <motion.div 
-    initial = {{x: 1000}}
-    animate = {{x: 0}}
-    exit={{x: 1000}}
+    <motion.div
+    variants={variants}
     ref={ref} className='acc-container'>
         <div className='top-fields'>
           <button className={'toggler ' + (toggle ? 'toggle-active' : '')} type='button' onClick={scroller}>+</button>
