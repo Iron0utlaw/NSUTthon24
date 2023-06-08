@@ -64,10 +64,6 @@ input{
     font-size: 20px;
 }
 
-.acc-container button{
-    width: min-content;
-}
-
 input[name="rollno"],input[name="name"],input[name="branch"]{
     text-transform: uppercase;
 }
@@ -125,5 +121,25 @@ input[name="rollno"],input[name="name"],input[name="branch"]{
 
     .acc-toggle input{
         font-size: 1em;
+    }
+}
+
+@media (max-width:375px) {
+    .toggler{
+        padding: 4px;
+        margin-left: 6px;
+        font-size: 1.2em;
+        height: 23px;
+        width: 23px;
+    }
+    .acc-container{
+        padding: 0 10px 0 0;
+    }
+    .acc-toggle{
+        margin-left: 0px;
+        padding-left: 12.8px;
+    }
+    .name-input{
+        padding-left: 6px;
     }
 }
