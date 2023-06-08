@@ -1,7 +1,7 @@
 import React from 'react'
 import  ReactDOM from 'react-dom'
 import './modal.css'
-import Preview from './Preview'
+import Preview from '../Preview/Preview'
 import { BsFillArrowRightCircleFill } from 'react-icons/bs'
 const Modal = ({closeModal, data ,team}) => {
   return ReactDOM.createPortal(
