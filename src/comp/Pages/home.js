@@ -8,9 +8,9 @@ const Home = () => {
     <div className='main-container'>
         <Thon/>
         <div>
-        <Link to="/r">Register</Link>
+        <Link to="/registration">Register</Link>
         <p></p>
-        <Link to="/s">Teams</Link>
+        <Link to="/teams">Teams</Link>
         </div>
     </div>
   )
