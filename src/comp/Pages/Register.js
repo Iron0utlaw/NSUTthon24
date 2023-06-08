@@ -7,7 +7,7 @@ import AddData from '../modules/AddData'
 import { tName, clear } from '../modules/RegMods';
 import { openModal,closeModal } from '../modules/ModalMods';
 import { Link } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 
 const Reg = () => {
@@ -70,6 +70,15 @@ const Reg = () => {
     }
     let i = 0;
 
+    const variants = {
+        enter: {
+          transition: { staggerChildren: 1, delayChildren: 0 }
+        },
+        exit: {
+          transition: { staggerChildren: 0.05, staggerDirection: -1 }
+        }
+      };
+
   return (
     <div className='reg-container'>
         <div className='side'>
@@ -86,7 +95,12 @@ const Reg = () => {
             </div>
             <div className='team-details'>
                 <input className='team-name' required type='text' placeholder='Team Name' value={data[0].teamName} onChange={e => tName(e,0,data,setData)}></input>
-                <AnimatePresence mode={'sync'}>
+                <AnimatePresence>
+                <motion.dev
+                               variants={variants}
+                               initial="exit"
+                               animate="enter"
+                               exit="exit">
                 {
                     members.map((curr) => {
                         return <Myacc key={i+1} name={curr.props.children[1]} data={data} setData={setData} id={i++}/>
@@ -94,6 +108,7 @@ const Reg = () => {
                     })
                 }
                 <button className='submit-form' type='button' onClick={() => openModal(data,setData,setShowModal,team)}>Submit</button>
+                </motion.dev>
                 </AnimatePresence>
             </div>
             {showModal && <Modal closeModal={() => closeModal(setShowModal)} data={data} team={team}/>}
