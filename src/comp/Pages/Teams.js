@@ -5,6 +5,7 @@ import './teams.css'
 import {ReactComponent as Thon} from '../../assets/thon-white.svg'
 import { BarLoader } from 'react-spinners'
 import { postData } from '../modules/PostData'
+import {BiSearch} from 'react-icons/bi'
 
 const Teams = () => {
     const [allTeams,setAllTeams] = useState([]);
@@ -28,20 +29,26 @@ const Teams = () => {
         fetchData();
     },[])
 
+    allTeams.sort((a, b) => (a.id > b.id) ? 1 : -1)
     if(err) return <h1>ERROR</h1>
   return (
-    <div className='team-wrapper'>
+    <div className='team-loader'>
         {loading ? <div className='bar'>
             <BarLoader className='bar' color='#2BE280' />
         </div>
         :
-        <div>
-            <div className='team-header'>
-                <Thon className='logo'/>
-                <h1>Teams</h1>
+        <div className='team-wrapper'>
+            <div className='temp'>
+            <Thon className='logo'/>
+            <h1 className='team-header'>Teams</h1>
             </div>
             <div className='team-container'>
-                <input type='text' placeholder='Search Team' onChange={(e) => setSearch(e.target.value)}></input>
+                <div className='team-search'>
+                <input className='search-bar' type='text' placeholder='Search Team' onChange={(e) => setSearch(e.target.value)}></input>
+                <button className='search-btn' type='button'>
+                    <BiSearch/>
+                </button>
+                </div>
                 <div className='all-teams'>
                 {
                     allTeams.filter((entry) => {

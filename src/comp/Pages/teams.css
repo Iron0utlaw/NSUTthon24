@@ -1,7 +1,66 @@
+.team-wrapper{
+    padding: 50px;
+    margin: 0;
+    max-width: 100%;
+}
+
+.team-container{
+    display: grid;
+    gap: 4em;
+}
+
+.search-bar{
+    padding: 12px 20px;
+    font-size: 17px;
+    float: left;
+    background: var(--main);
+    margin: 0;
+    border-radius: 50px 0px 0px 50px;
+    font-weight: 500;
+    font-family: 'Mont';
+    text-transform: uppercase;
+}
+
+.search-btn{
+    float: left;
+    padding: 12px;
+    background: var(--accent);
+    color: var(--sec);
+    font-size: 17px;
+    cursor: pointer;
+    margin: 0;
+    border-style: none;
+    border-left: 2px solid var(--sec);
+    border-radius: 0px 50px 50px 0px;
+}
+
+.team-search{
+    display: block;
+    margin: auto;
+}
+
 .all-teams{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 1em;
+    grid-template-columns: repeat(3,1fr);
+    gap: 4em;
+}
+
+.logo{
+    width: 50px;
+    height: fit-content;
+}
+
+.team-header{
+    text-transform: uppercase;
+    font-size: 15vw;
+    text-align: center;
+    font-weight: 800;
+    margin: 80px 80px 0px 80px;
+}
+
+.team-loader{
+    height: 100vh;
+    width: 100vw;
 }
 
 .bar{
@@ -11,32 +70,44 @@
     transform: translate(-50%, -50%);
 }
 
-.team-wrapper{
-    height: 100vh;
-    width: 100vw;
-}
+@media (max-width: 450px) {
+    .all-teams{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 2em;
+    }
 
-.logo{
-    width: 75px;
-    height: fit-content;
-    padding: 10px;
-}
+    .team-header{
+        /* font-size: 30%; */
+        margin: 0;
+    }
 
-.team-header{
-    display: flex;
-    align-items: center;
-    width: max-content;
-    justify-content: space-around;
-    text-transform: uppercase;
-    font-size: 50px;
-}
+    .team-search{
+        margin-top: 2em;
+    }
 
-.team-header h1{
-    margin: 0;
+    .team-wrapper{
+        padding: 30px;
+        margin: 0;
+        max-width: 100%;
+    }
 
-}
+    .search-bar{
+        font-size: 15px;
+    }
 
-.team-container{
-    background-color: var(--main);
-    padding: 70px;
+    .search-btn{
+        font-size: 15px;
+    }
+
+    .team-container{
+        gap: 2rem;
+    }
+
+    .temp{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 25px;
+    }
 }

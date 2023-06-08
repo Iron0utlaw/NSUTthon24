@@ -1,13 +1,47 @@
 .team-card{
     background-color: var(--main);
     color: var(--sec);
-    width: 300px;
     padding: 20px;
     margin-bottom: 10px;
     border: 2px solid var(--sec);
-    border-radius: 38px;
+    border-radius: 8px;
+}
+
+.team-card-name{
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    text-align: right;
+    margin: 25px 25px 0 0;
+    /* line-height: 75px; */
 }
 
 .team-id{
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    /* line-height: 106px; */
     margin: 0;
+}
+
+.team-score{
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 70px;
+    text-align: right;
+    margin: 10px 25px 0 0;
+    /* line-height: 145px; */
+}
+
+@media (max-width: 450px) {
+    .team-score{
+        margin: 2px 10px 0 0;
+    }
+    .team-card-name{
+        margin: 2px 10px 0 0;
+        font-size: 40px;
+    }
 }
