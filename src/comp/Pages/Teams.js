@@ -45,7 +45,7 @@ const Teams = () => {
             </div>
             <div className='team-container'>
                 <div className='team-search'>
-                <input className='search-bar' type='text' placeholder='Search Team' onChange={(e) => setSearch(e.target.value)}></input>
+                <input className='search-bar' type='text' placeholder='Search Team' onChange={(e) => setSearch(e.target.value.toLowerCase())}></input>
                 <button className='search-btn' type='button'>
                     <BiSearch/>
                 </button>
