@@ -7,6 +7,7 @@ import AddData from '../modules/AddData'
 import { tName, clear } from '../modules/RegMods';
 import { openModal,closeModal } from '../modules/ModalMods';
 import { Link } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 
 
 const Reg = () => {
@@ -85,12 +86,15 @@ const Reg = () => {
             </div>
             <div className='team-details'>
                 <input className='team-name' required type='text' placeholder='Team Name' value={data[0].teamName} onChange={e => tName(e,0,data,setData)}></input>
+                <AnimatePresence mode={'sync'}>
                 {
                     members.map((curr) => {
                         return <Myacc key={i+1} name={curr.props.children[1]} data={data} setData={setData} id={i++}/>
+                        
                     })
                 }
                 <button className='submit-form' type='button' onClick={() => openModal(data,setData,setShowModal,team)}>Submit</button>
+                </AnimatePresence>
             </div>
             {showModal && <Modal closeModal={() => closeModal(setShowModal)} data={data} team={team}/>}
         </form>
