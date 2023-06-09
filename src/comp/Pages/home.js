@@ -8,8 +8,8 @@ const Home = () => {
     <div className='main-container'>
         <Thon className='main-logo'/>
         <div className='link-container'>
-          <Link className='link' to="/registration">Register</Link>
           <Link className='link' to="/teams">Teams</Link>
+          <Link className='link' to="/registration">Register</Link>
         </div>
     </div>
   )
