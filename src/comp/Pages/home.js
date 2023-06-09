@@ -2,15 +2,16 @@ import React from "react";
 import "./home.css";
 import { ReactComponent as Thon } from "../../assets/Thon.svg";
 import { Link } from "react-router-dom";
+//import { supabase } from ".../supabase.js";
 
 const Home = () => {
   return (
     <div className="main-container">
       <Thon className="main-logo" />
       <div className="link-container">
-        <div class="container">
-          <button class="button">New user</button>
-        </div>
+        {/* <div class="container">
+          <button onClick={} class="button">New user</button>
+        </div> */}
         <Link className="link" to="/registration">
           Register
         </Link>
