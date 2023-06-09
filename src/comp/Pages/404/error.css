@@ -16,9 +16,9 @@
     font-family: 'Mont';
     position: absolute;
     z-index: -22;
-    font-size: 60em;
     margin: 0;
     color: rgb(35, 35, 35);
+    font-size: 60em;
 }
 
 .err-link{
@@ -27,4 +27,10 @@
 
 .err-link:visited{
     color: var(--accent);
+}
+
+@media (max-width: 450px) {
+    .back{
+        font-size: 15em;
+    }
 }
