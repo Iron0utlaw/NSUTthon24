@@ -31,7 +31,12 @@ const Teams = () => {
         fetchData();
     },[])
 
-    allTeams.sort((a, b) => (a.id > b.id) ? 1 : -1)
+    allTeams.sort((a, b) => {
+        if (a.score === b.score){
+          return a.id < b.id ? -1 : 1
+        } else {
+          return a.score > b.score ? -1 : 1
+        }})
     const [height, setHeight] = useState(0);
     const elementRef = useRef(null);
     
