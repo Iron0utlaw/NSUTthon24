@@ -3,7 +3,7 @@ import Select from 'react-select';
 import { LeaderToggle, emailHandler, nameHandler, rollnoHandler, branchHandler} from '../modules/AccMods';
 import { options } from '../modules/BranchData';
 import './myacc.css'
-import { AnimatePresence, easeIn, easeOut, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Myacc = ({name, data, setData, id}) => {
     const [toggle, setToggle] = useState(false)
@@ -26,7 +26,7 @@ const Myacc = ({name, data, setData, id}) => {
       exit: {
         opacity: 0,
         x: 100,
-        transition: { staggerChildren: 0.05, staggerDirection: -1 }
+        transition: { staggerChildren: 0.5, staggerDirection: -1 }
       }
     };
   return (

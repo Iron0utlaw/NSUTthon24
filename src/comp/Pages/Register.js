@@ -6,7 +6,6 @@ import Modal from '../Modal/Modal';
 import AddData from '../modules/AddData'
 import { tName, clear } from '../modules/RegMods';
 import { openModal,closeModal } from '../modules/ModalMods';
-import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
 
@@ -65,17 +64,17 @@ const Reg = () => {
     const onSubmit = (e) =>{
         e.preventDefault()
         clear(data,setData,team);
-        console.log(JSON.parse(JSON.stringify(data)));
+        console.table(JSON.parse(JSON.stringify(data)));
         AddData(data);
     }
     let i = 0;
 
     const variants = {
         enter: {
-          transition: { staggerChildren: 1, delayChildren: 0 }
+          transition: { staggerChildren: 0.1, delayChildren: 0 }
         },
         exit: {
-          transition: { staggerChildren: 0.05, staggerDirection: -1 }
+          transition: { staggerChildren: 0.5, staggerDirection: 1 }
         }
       };
 
@@ -96,11 +95,11 @@ const Reg = () => {
             <div className='team-details'>
                 <input className='team-name' required type='text' placeholder='Team Name' value={data[0].teamName} onChange={e => tName(e,0,data,setData)}></input>
                 <AnimatePresence>
-                <motion.dev
-                               variants={variants}
-                               initial="exit"
-                               animate="enter"
-                               exit="exit">
+                <motion.div
+                variants={variants}
+                initial="exit"
+                animate="enter"
+                exit="exit">
                 {
                     members.map((curr) => {
                         return <Myacc key={i+1} name={curr.props.children[1]} data={data} setData={setData} id={i++}/>
@@ -108,7 +107,7 @@ const Reg = () => {
                     })
                 }
                 <button className='submit-form' type='button' onClick={() => openModal(data,setData,setShowModal,team)}>Submit</button>
-                </motion.dev>
+                </motion.div>
                 </AnimatePresence>
             </div>
             {showModal && <Modal closeModal={() => closeModal(setShowModal)} data={data} team={team}/>}
