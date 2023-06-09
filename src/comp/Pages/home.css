@@ -36,3 +36,23 @@
         width: 80%;
     }
 }
+.container {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  padding: 22.5px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #333;
+}
