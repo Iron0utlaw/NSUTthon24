@@ -6,6 +6,7 @@ const Team = ({entry}) => {
 
   return (
         <motion.div 
+        layout
         className='team-card-wrapper'>
           <h1 className='team-id'>{entry.id}</h1>
           <div className='team-card'>

@@ -34,6 +34,7 @@ const Teams = () => {
     allTeams.sort((a, b) => (a.id > b.id) ? 1 : -1)
     const [height, setHeight] = useState(0);
     const elementRef = useRef(null);
+    
 
     useEffect(() => {
         setHeight(elementRef.current.offsetHeight);
@@ -65,8 +66,10 @@ const Teams = () => {
                 </button>
                 </div>
                 <AnimatePresence>
-                <motion.div 
+                <motion.div
+                layout
                 initial={{opacity: 0, y: 200}}
+                exit={{opacity: 0, y: 200}}
                 animate={{opacity: 1, y: 0}}
                 transition={{duration: 1.2}}
                 className='all-teams'>
