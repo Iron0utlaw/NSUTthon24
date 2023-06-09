@@ -42,9 +42,9 @@ const Myacc = ({name, data, setData, id}) => {
         <AnimatePresence>
         {toggle &&
               <motion.div
-                initial={{height: 0, opacity: 0}}
-                animate={{height: 200, opacity: 1}}
-                exit={{height: 0, opacity: 0}}
+                initial={{ opacity: 0}}
+                animate={{opacity: 1}}
+                exit={{ opacity: 0}}
                 className='acc-toggle'>
                 <input required type='text' name="email" placeholder="Email" value={data[id].email} onChange={e => emailHandler(e,id,data,setData)}></input>
                 <Select required className='drop' placeholder="Branch" options={options} onChange={value => branchHandler(value,id,data,setData)}/>
