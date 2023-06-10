@@ -13,12 +13,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--sec);
   color: var(--main);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 code {
   font-family: 'Raleway',source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+::-webkit-scrollbar{
+  display: none;
+}
+
 
 @font-face {
   font-family: 'Raleway';
