@@ -29,7 +29,8 @@ const Teams = () => {
 
     useEffect(() => {
         fetchData();
-    },[])
+        console.log(allTeams)
+},[])
 
     allTeams.sort((a, b) => {
         if (a.score === b.score){
