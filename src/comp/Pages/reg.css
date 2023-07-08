@@ -1,130 +1,131 @@
-.reg-container{
-    display: grid;
-    gap: 4rem;
-    grid-template-columns: 1fr 2fr;
+.reg-container {
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 1fr 2fr;
 }
 
-.form{
-    background-color: var(--sec);
-    height: 100vh;
-    width: fit-content;
-    overflow:scroll;
-    text-align: left;
+.form {
+  background-color: var(--sec);
+  height: 100vh;
+  width: fit-content;
+  overflow: scroll;
+  text-align: left;
 }
 
-.side{
-    background-color: var(--main);
-    height: 100vh;
-    width: 30vw;
-    display: flex;
-    align-items: center;
-    position: sticky;
-    bottom: 0;
+.side {
+  background-color: var(--main);
+  height: 100vh;
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
 }
 
-.thon{
-    translate: -45%;
-    scale: 1.8;
+.thon {
+  translate: -45%;
+  scale: 1.8;
 }
 
-.team-size{
-    background-color: var(--main);
-    width: fit-content;
-    padding: 15px ;
-    height: 30px;
-    width: 30px;
-    color: var(--sec);
-    font-size: 24px;
-    cursor: pointer;
-    border-radius: 100%;
-    text-align:center;
-    font-family: 'Akira';
+.team-size {
+  background-color: var(--main);
+  width: fit-content;
+  padding: 15px;
+  height: 30px;
+  width: 30px;
+  color: var(--sec);
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 100%;
+  text-align: center;
+  font-family: "Akira";
 }
 
-.size-btn{
-    display: flex;
-    justify-content: space-between;
-    height: min-content;
+.size-btn {
+  display: flex;
+  justify-content: space-between;
+  height: min-content;
 }
 
-.size{
-    width: max-content;
+.size {
+  width: max-content;
 }
 
-.size h1{
-    margin-bottom: 0;
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 40px;
-    text-transform: uppercase;
+.size h1 {
+  margin-bottom: 0;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  text-transform: uppercase;
 }
 
-.team-details{
-    margin-right: 8rem;
+.team-details {
+  margin-right: 8rem;
 }
 
-.team-name{
-    background-color: var(--sec);
-    border-style: none;
-    font-family: 'Raleway';
-    font-size: 5em;
-    text-transform: uppercase;
-    font-weight: 800;
-    margin-bottom: 0.5em;
-    color: var(--main);
-    width: 100%;
+.team-name {
+  background-color: var(--sec);
+  border-style: none;
+  font-family: "Raleway";
+  font-size: 5em;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 0.5em;
+  color: var(--main);
+  width: 100%;
 }
-.team-name::placeholder{
-    color: rgb(203, 203, 203);
+.team-name::placeholder {
+  color: rgb(203, 203, 203);
 }
 
 input,
 input::before,
 input::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-input:focus{
-    outline: none;
+input:focus {
+  outline: none;
 }
 
-
-.submit-form{
-    width: 100%;
-    font-family: 'Mont';
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 20px;
-    padding: 15px;
-    border-radius: 6px;
-    border-style: none;
-    background-color: var(--accent);
+.submit-form {
+  width: 100%;
+  font-family: "Mont";
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 6px;
+  border-style: none;
+  background-color: var(--accent);
 }
-
-@media (max-width:930px){
-    .thon{
-        display: none;
-    }
-    .side{
-        width: 90%;
-    }
-    .reg-container{
-        gap: 1em;
-        grid-template-columns: 1fr 20fr;
-    }
-    .team-details{
-        margin-right: 1.5rem;
-    }
-    .team-name{
-        font-size: 3rem;
-    }
-    .size h1{
-        font-size: 30px;
-    }
-    .team-size{
-        width: 30px;
-        height: 30px;
-        padding: 8px;
-    }
+.bg-green {
+  background-color: var(--accent);
+}
+@media (max-width: 930px) {
+  .thon {
+    display: none;
+  }
+  .side {
+    width: 90%;
+  }
+  .reg-container {
+    gap: 1em;
+    grid-template-columns: 1fr 20fr;
+  }
+  .team-details {
+    margin-right: 1.5rem;
+  }
+  .team-name {
+    font-size: 3rem;
+  }
+  .size h1 {
+    font-size: 30px;
+  }
+  .team-size {
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+  }
 }
