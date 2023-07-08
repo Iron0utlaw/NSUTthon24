@@ -9,23 +9,6 @@ import { openModal, closeModal } from "../modules/ModalMods";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Reg = () => {
-  const [button1Flag, setButton1Flag] = useState(false);
-  const [button2Flag, setButton2Flag] = useState(false);
-  const [button3Flag, setButton3Flag] = useState(false);
-
-  const clickHandler = (buttonNum) => {
-    setButton1Flag(0);
-    setButton2Flag(0);
-    setButton3Flag(0);
-    setTeam(buttonNum + 2);
-    if (buttonNum === 1) {
-      setButton1Flag(!button1Flag);
-    } else if (buttonNum === 2) {
-      setButton2Flag(!button2Flag);
-    } else if (buttonNum === 3) {
-      setButton3Flag(!button3Flag);
-    }
-  };
   const [team, setTeam] = useState(3);
   const members = [];
   for (let i = 0; i < team; i++) {
@@ -75,6 +58,23 @@ const Reg = () => {
       leader: false,
     },
   ]);
+  const [button1Flag, setButton1Flag] = useState(false);
+  const [button2Flag, setButton2Flag] = useState(false);
+  const [button3Flag, setButton3Flag] = useState(false);
+
+  const clickHandler = (buttonNum) => {
+    setButton1Flag(0);
+    setButton2Flag(0);
+    setButton3Flag(0);
+    setTeam(buttonNum + 2);
+    if (buttonNum === 1) {
+      setButton1Flag(!button1Flag);
+    } else if (buttonNum === 2) {
+      setButton2Flag(!button2Flag);
+    } else if (buttonNum === 3) {
+      setButton3Flag(!button3Flag);
+    }
+  };
   const [showModal, setShowModal] = useState(false);
 
   const onSubmit = (e) => {
