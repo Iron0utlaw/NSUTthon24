@@ -12,7 +12,7 @@ const Home = () => {
           <Link className='link' to="/teams">Teams</Link>
           <Link className='link' to="/registration">Register</Link>
           {/* <Link className='link' to="/soc-events">SocEvents</Link> */}
-          <a href={thonsvg} download="thonsvg">Click</a>
+          {/* <a href={thonsvg} download="thonsvg">Click</a> */}
         </div>
     </div>
   )
